@@ -62,6 +62,19 @@ public class ToileController implements Initializable {
     Circle point6;
 
     @FXML
+    Line ligne1a2;
+    @FXML
+    Line ligne2a3;
+    @FXML
+    Line ligne3a4;
+    @FXML
+    Line ligne4a5;
+    @FXML
+    Line ligne5a6;
+    @FXML
+    Line ligne6a1;
+
+    @FXML
     Label erreurLabel;
 
     @FXML
@@ -132,6 +145,8 @@ public class ToileController implements Initializable {
             numberC6 = Integer.parseInt(c6TextField.getText());
         }
 
+        // Vérification
+
         if (!(((numberC1 < 0) || (numberC1 > 20))
                 || ((numberC2 < 0) || (numberC2 > 20))
                 || ((numberC3 < 0) || (numberC3 > 20))
@@ -158,6 +173,39 @@ public class ToileController implements Initializable {
 
             point6.setCenterX(getXRadarChart(numberC6,6));
             point6.setCenterY(getYRadarChart(numberC6,6));
+
+            // Lignes
+
+            ligne1a2.setStartX(getXRadarChart(numberC1,1));
+            ligne1a2.setStartY(getYRadarChart(numberC1,1));
+            ligne1a2.setEndX(getXRadarChart(numberC2,2));
+            ligne1a2.setEndY(getYRadarChart(numberC2,2));
+
+            ligne2a3.setStartX(getXRadarChart(numberC2,2));
+            ligne2a3.setStartY(getYRadarChart(numberC2,2));
+            ligne2a3.setEndX(getXRadarChart(numberC3,3));
+            ligne2a3.setEndY(getYRadarChart(numberC3,3));
+
+            ligne3a4.setStartX(getXRadarChart(numberC3,3));
+            ligne3a4.setStartY(getYRadarChart(numberC3,3));
+            ligne3a4.setEndX(getXRadarChart(numberC4,4));
+            ligne3a4.setEndY(getYRadarChart(numberC4,4));
+
+            ligne4a5.setStartX(getXRadarChart(numberC4,4));
+            ligne4a5.setStartY(getYRadarChart(numberC4,4));
+            ligne4a5.setEndX(getXRadarChart(numberC5,5));
+            ligne4a5.setEndY(getYRadarChart(numberC5,5));
+
+            ligne5a6.setStartX(getXRadarChart(numberC5,5));
+            ligne5a6.setStartY(getYRadarChart(numberC5,5));
+            ligne5a6.setEndX(getXRadarChart(numberC6,6));
+            ligne5a6.setEndY(getYRadarChart(numberC6,6));
+
+            ligne6a1.setStartX(getXRadarChart(numberC6,6));
+            ligne6a1.setStartY(getYRadarChart(numberC6,6));
+            ligne6a1.setEndX(getXRadarChart(numberC1,1));
+            ligne6a1.setEndY(getYRadarChart(numberC1,1));
+
         }
         else {
 
@@ -195,6 +243,36 @@ public class ToileController implements Initializable {
         point6.setCenterY(getYRadarChart(0,6));
 
         erreurLabel.setText("");
+
+        ligne1a2.setStartX(getXRadarChart(0,1));
+        ligne1a2.setStartY(getYRadarChart(0,1));
+        ligne1a2.setEndX(getXRadarChart(0,2));
+        ligne1a2.setEndY(getYRadarChart(0,2));
+
+        ligne2a3.setStartX(getXRadarChart(0,2));
+        ligne2a3.setStartY(getYRadarChart(0,2));
+        ligne2a3.setEndX(getXRadarChart(0,3));
+        ligne2a3.setEndY(getYRadarChart(0,3));
+
+        ligne3a4.setStartX(getXRadarChart(0,3));
+        ligne3a4.setStartY(getYRadarChart(0,3));
+        ligne3a4.setEndX(getXRadarChart(0,4));
+        ligne3a4.setEndY(getYRadarChart(0,4));
+
+        ligne4a5.setStartX(getXRadarChart(0,4));
+        ligne4a5.setStartY(getYRadarChart(0,4));
+        ligne4a5.setEndX(getXRadarChart(0,5));
+        ligne4a5.setEndY(getYRadarChart(0,5));
+
+        ligne5a6.setStartX(getXRadarChart(0,5));
+        ligne5a6.setStartY(getYRadarChart(0,5));
+        ligne5a6.setEndX(getXRadarChart(0,6));
+        ligne5a6.setEndY(getYRadarChart(0,6));
+
+        ligne6a1.setStartX(getXRadarChart(0,6));
+        ligne6a1.setStartY(getYRadarChart(0,6));
+        ligne6a1.setEndX(getXRadarChart(0,1));
+        ligne6a1.setEndY(getYRadarChart(0,1));
 
     }
 
