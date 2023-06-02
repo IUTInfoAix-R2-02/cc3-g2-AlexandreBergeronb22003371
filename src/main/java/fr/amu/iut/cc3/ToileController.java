@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
@@ -61,6 +62,9 @@ public class ToileController implements Initializable {
     Circle point6;
 
     @FXML
+    Label erreurLabel;
+
+    @FXML
     private void tracerClicked() {
         float numberC1;
         float numberC2;
@@ -77,8 +81,7 @@ public class ToileController implements Initializable {
         else {
             numberC1 = Integer.parseInt(c1TextField.getText());
         }
-        point1.setCenterX(getXRadarChart(numberC1, 1));
-        point1.setCenterY(getYRadarChart(numberC1,1));
+
 
         //C2
         if (c2TextField.getText().isEmpty()) {
@@ -88,8 +91,7 @@ public class ToileController implements Initializable {
         else {
             numberC2 = Integer.parseInt(c2TextField.getText());
         }
-        point2.setCenterX(getXRadarChart(numberC2, 2));
-        point2.setCenterY(getYRadarChart(numberC2,2));
+
 
         //C3
         if (c3TextField.getText().isEmpty()) {
@@ -99,8 +101,7 @@ public class ToileController implements Initializable {
         else {
             numberC3 = Integer.parseInt(c3TextField.getText());
         }
-        point3.setCenterX(getXRadarChart(numberC3,3));
-        point3.setCenterY(getYRadarChart(numberC3,3));
+
 
         //C4
         if (c4TextField.getText().isEmpty()) {
@@ -110,8 +111,7 @@ public class ToileController implements Initializable {
         else {
             numberC4 = Integer.parseInt(c4TextField.getText());
         }
-        point4.setCenterX(getXRadarChart(numberC4,4));
-        point4.setCenterY(getYRadarChart(numberC4,4));
+
 
         //C5
         if (c5TextField.getText().isEmpty()) {
@@ -121,8 +121,7 @@ public class ToileController implements Initializable {
         else {
             numberC5 = Integer.parseInt(c5TextField.getText());
         }
-        point5.setCenterX(getXRadarChart(numberC5,5));
-        point5.setCenterY(getYRadarChart(numberC5,5));
+
 
         //C6
         if (c6TextField.getText().isEmpty()) {
@@ -132,8 +131,71 @@ public class ToileController implements Initializable {
         else {
             numberC6 = Integer.parseInt(c6TextField.getText());
         }
-        point6.setCenterX(getXRadarChart(numberC6,6));
-        point6.setCenterY(getYRadarChart(numberC6,6));
+
+        if (!(((numberC1 < 0) || (numberC1 > 20))
+                || ((numberC2 < 0) || (numberC2 > 20))
+                || ((numberC3 < 0) || (numberC3 > 20))
+                || ((numberC4 < 0) || (numberC4 > 20))
+                || ((numberC5 < 0) || (numberC5 > 20))
+                || ((numberC6 < 0) || (numberC6 > 20)))) {
+
+            erreurLabel.setText("");
+
+            point1.setCenterX(getXRadarChart(numberC1, 1));
+            point1.setCenterY(getYRadarChart(numberC1,1));
+
+            point2.setCenterX(getXRadarChart(numberC2, 2));
+            point2.setCenterY(getYRadarChart(numberC2,2));
+
+            point3.setCenterX(getXRadarChart(numberC3,3));
+            point3.setCenterY(getYRadarChart(numberC3,3));
+
+            point4.setCenterX(getXRadarChart(numberC4,4));
+            point4.setCenterY(getYRadarChart(numberC4,4));
+
+            point5.setCenterX(getXRadarChart(numberC5,5));
+            point5.setCenterY(getYRadarChart(numberC5,5));
+
+            point6.setCenterX(getXRadarChart(numberC6,6));
+            point6.setCenterY(getYRadarChart(numberC6,6));
+        }
+        else {
+
+            erreurLabel.setText("Les valeurs doivent \nêtre entre 0 et 20 !");
+
+        }
+
+    }
+
+    @FXML
+    private void viderClicked() {
+        c1TextField.setText("");
+        c2TextField.setText("");
+        c3TextField.setText("");
+        c4TextField.setText("");
+        c5TextField.setText("");
+        c6TextField.setText("");
+
+        point1.setCenterX(getXRadarChart(0, 1));
+        point1.setCenterY(getYRadarChart(0,1));
+
+        point2.setCenterX(getXRadarChart(0, 2));
+        point2.setCenterY(getYRadarChart(0,2));
+
+        point3.setCenterX(getXRadarChart(0,3));
+        point3.setCenterY(getYRadarChart(0,3));
+
+        point4.setCenterX(getXRadarChart(0,4));
+        point4.setCenterY(getYRadarChart(0,4));
+
+        point5.setCenterX(getXRadarChart(0,5));
+        point5.setCenterY(getYRadarChart(0,5));
+
+        point6.setCenterX(getXRadarChart(0,6));
+        point6.setCenterY(getYRadarChart(0,6));
+
+        erreurLabel.setText("");
+
     }
 
     public static void numericOnly(final TextField field) {

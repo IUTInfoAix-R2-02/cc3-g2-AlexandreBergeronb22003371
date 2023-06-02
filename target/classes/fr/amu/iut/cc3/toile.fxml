@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox fx:controller="fr.amu.iut.cc3.ToileController" id="scene" prefHeight="500.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #BCD0FB" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<HBox id="scene" prefHeight="500.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #BCD0FB" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
     <Pane prefHeight="400.0" prefWidth="400.0">
         <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
@@ -50,6 +50,7 @@
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
      </rowConstraints>
       <children>
          <TextField fx:id="c1TextField" GridPane.columnIndex="1" />
@@ -64,8 +65,9 @@
          <Label text="Compétence 4 - Gérer" GridPane.rowIndex="3" />
          <Label text="Compétence 5 - Conduire" GridPane.rowIndex="4" />
          <Label text="Compétence 6 - Collaborer" GridPane.rowIndex="5" />
-         <Button mnemonicParsing="false" text="Tracer" GridPane.rowIndex="6" onAction="#tracerClicked"/>
-         <Button mnemonicParsing="false" text="Vider" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         <Button mnemonicParsing="false" onAction="#tracerClicked" text="Tracer" GridPane.rowIndex="7" />
+         <Button mnemonicParsing="false" onAction="#viderClicked" text="Vider" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         <Label fx:id="erreurLabel" style="-fx-text-fill: red" GridPane.rowIndex="6" />
       </children>
       <HBox.margin>
          <Insets left="130.0" right="30.0" />
